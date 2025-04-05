@@ -1,0 +1,10 @@
+@import "tailwindcss";
+#Coursel{
+    background: url('https://occ-0-4875-2186.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABbUpXX_AneCYQKg-rKutX49ITZ3AGZatEzDZMe7iMjq088am3i1axeDt7ha-6X7xuIjuEX_WjADRSFPyfuocf2coiqpHchEB-1qh.jpg?r=fa8');
+    background-attachment: fixed;
+    /* background-position: center; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 30rem;
+    width: 100%;
+}
