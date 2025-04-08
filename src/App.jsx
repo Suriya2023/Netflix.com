@@ -37,11 +37,11 @@ function App() {
 
   const [myData, setMyData] = useState([]);
 
-  const url = 'https://netflix54.p.rapidapi.com/search/?query=stranger&offset=0&limit_titles=50&limit_suggestions=20&lang=en';
+  // const url = 'https://netflix54.p.rapidapi.com/search/?query=stranger&offset=0&limit_titles=800&limit_suggestions=20&lang=en';
   const options = {
     method: 'GET',
     headers: {
-      'x-rapidapi-key': 'c1cd15d9bcmsh6fd9bd2cecb0a6fp10911ejsn0e5aeaa5d8bd',
+      'x-rapidapi-key': '7ebb548c04msh1779cf674613af6p190715jsnbb3333b07d3c',
       'x-rapidapi-host': 'netflix54.p.rapidapi.com'
     }
   };
@@ -49,9 +49,9 @@ function App() {
   const fetchData = async () => {
     try {
       const response = await fetch(url, options);
-      const result = await response.json(); // ✅ fix here
-      console.log(result);
-      setMyData(result.titles || []); // ✅ make sure it's an array
+      const result = await response.json();
+      // console.log(result);
+      setMyData(result.titles || []);
     } catch (error) {
       console.error('Error fetching data:', error);
     }
@@ -91,12 +91,12 @@ function App() {
     { title: "Mission Impossible 6", year: "2018", rating: "★★★★★", imageUrl: "/api/placeholder/165/230" }
   ];
 
-  // Category data
+
   const categories = ["All", "Adventure", "Animation", "Comedy", "Crime", "Drama", "Documentary", "Horror"];
 
   const responsive = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
+
       breakpoint: { max: 4000, min: 3000 },
       items: 5
     },
@@ -117,13 +117,20 @@ function App() {
   return (
     <div className="bg-black min-h-screen text-white">
       <Header />
-
-      <HeroBanner
-        title="Pushpa"
-        description="2025⁨U/A 16+⁩MovieActionDramas
+      
+      <HeroBanner />
+      
+      {/* {
+        myData.map((Crous) => {
+          return <HeroBanner key={Crous.summary.id} Data={Crous}
+            title="Pushpa"
+            description="2025⁨U/A 16+⁩MovieActionDramas
 As his smuggling empire grows, a brazen Pushpa longs for power and respect on his vengeful journey, while facing old rivals and new."
-        imageUrl="https://occ-0-4875-2186.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABbUpXX_AneCYQKg-rKutX49ITZ3AGZatEzDZMe7iMjq088am3i1axeDt7ha-6X7xuIjuEX_WjADRSFPyfuocf2coiqpHchEB-1qh.jpg?r=fa8"
-      />
+            imageUrl="https://occ-0-4875-2186.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABbUpXX_AneCYQKg-rKutX49ITZ3AGZatEzDZMe7iMjq088am3i1axeDt7ha-6X7xuIjuEX_WjADRSFPyfuocf2coiqpHchEB-1qh.jpg?r=fa8"
+          />
+
+        })
+      } */}
 
       <div className="px-4 py-6">
         <h2 className="text-xl font-medium text-white mb-4">Trends Top List</h2>
